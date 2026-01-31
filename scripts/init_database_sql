@@ -8,8 +8,9 @@ WARNING:
     Running this script will drop the entire 'DataWarehouse' database if it exists. 
                 */
 
+-- Create Database 'DataWarehouse'
+
 USE master;
-GO
 
 -- Drop and recreate the 'DataWarehouse' database
 IF EXISTS (SELECT 1 FROM sys.databases WHERE name = 'DataWarehouse')
@@ -19,19 +20,17 @@ BEGIN
 END;
 GO
 
--- Create the 'DataWarehouse' database
 CREATE DATABASE DataWarehouse;
-GO
 
 USE DataWarehouse;
+
 GO
 
--- Create Schemas
+-- Create schemas: bronze, silver, gold
 CREATE SCHEMA bronze;
 GO
-
 CREATE SCHEMA silver;
 GO
-
 CREATE SCHEMA gold;
 GO
+
