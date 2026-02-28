@@ -1,0 +1,39 @@
+CREATE OR ALTER PROCEDURE dbo.run_full_dwh_pipeline
+AS
+BEGIN
+    DECLARE @batch_start DATETIME = GETDATE();
+    BEGIN TRY
+
+        PRINT '===== DWH PIPELINE STARTED =====';
+
+        -- 1️⃣ Bronze
+        EXEC bronze.load_bronze;
+
+        -- Bronze Validation
+        IF (SELECT COUNT(*) FROM bronze.crm_cust_info) = 0
+            THROW 50001, 'Bronze validation failed', 1;
+
+        -- 2️⃣ Silver
+        EXEC silver.load_silver;
+
+        -- Silver Validation
+        IF (SELECT COUNT(*) FROM silver.crm_cust_info) = 0
+            THROW 50002, 'Silver validation failed', 1;
+
+        -- 3️⃣ Gold Validation
+        IF (SELECT COUNT(*) FROM gold.fact_sales) = 0
+            THROW 50003, 'Gold validation failed', 1;
+
+        PRINT '===== DWH PIPELINE COMPLETED SUCCESSFULLY =====';
+
+    END TRY
+    BEGIN CATCH
+        PRINT '===== DWH PIPELINE FAILED =====';
+        PRINT ERROR_MESSAGE();
+        THROW;
+    END CATCH
+END;
+GO
+
+-- run Orchestration
+--exec DataWarehouse.dbo.run_full_dwh_pipeline;
