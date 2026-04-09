@@ -11,8 +11,7 @@ This project follows Medallion Architecture:
 * Gold Layer — Business-ready data model (Fact & Dimension tables)
 
  # Data Architecture: Designing a modern data warehouse using Medallion Architecture (Bronze, Silver, and Gold layers).
-      
-      <img width="1527" height="806" alt="data_architecture-DWH" src="https://github.com/user-attachments/assets/81688430-34ea-4f92-9af5-064c4877f482" />
+   <img width="1527" height="806" alt="data_architecture-DWH" src="https://github.com/user-attachments/assets/81688430-34ea-4f92-9af5-064c4877f482" />
 
 
 # 🚀 Project Objectives
@@ -39,13 +38,22 @@ Audit logging for pipeline execution
 
 Gold Layer includes:
 
-Fact Tables
+# Fact Tables
 * fact_sales
-Dimension Tables
+
+# Dimension Tables
 * dim_customer
 * dim_product
 
+# data model image
+<img width="1500" height="558" alt="data_Model_StarSchema" src="https://github.com/user-attachments/assets/77830e63-f1f6-47da-b0ae-657636c8d812" />
+
+
 Optimized for analytical queries and reporting.
+
+# ➕ Data Integration
+<img width="861" height="571" alt="Data_integration drawio" src="https://github.com/user-attachments/assets/be3c473a-5ca9-4a62-b87f-5c6d70eba0cf" />
+
 
 # 📈 Analytics & Reporting
 
