@@ -1,21 +1,63 @@
-# SQL-Data-Warehouse-Project
+# Modern SQL Data Warehouse Project
 
-Building a modern data warehouse with SQL Server, including ETL processes, data modeling, and data analytics.
+Building a modern Data Warehouse using SQL Server, including ETL pipelines, Data Modeling, and Analytics.
 
-📖 Project Overview
+# 📊 Project Architecture
 
-This project involves:
+This project follows Medallion Architecture:
 
-1. Data Architecture: Designing a modern data warehouse using Medallion Architecture (Bronze, Silver, and Gold layers).
+* Bronze Layer — Raw data ingestion from source systems (ERP, CRM CSV files)
+* Silver Layer — Data cleansing, standardization, transformation
+* Gold Layer — Business-ready data model (Fact & Dimension tables)
+
+ # Data Architecture: Designing a modern data warehouse using Medallion Architecture (Bronze, Silver, and Gold layers).
       
       <img width="1527" height="806" alt="data_architecture-DWH" src="https://github.com/user-attachments/assets/81688430-34ea-4f92-9af5-064c4877f482" />
 
-   
-3. ETL Pipelines: Extracting, transforming, and loading data from source systems into the warehouse.
-4. Data Modeling: Developing fact and dimension tables optimized for analytical queries.
-5. Analytics & Reporting: Creating SQL-based reports and dashboards for actionable insights.
 
-  🥅 This repositories includes
+# 🚀 Project Objectives
+
+Develop a modern SQL-based Data Warehouse to:
+
+* Consolidate ERP and CRM data
+* Enable analytical reporting
+* Improve data quality
+* Provide business insights
+* Support decision making
+
+ # ⚙️ ETL Pipeline
+
+Pipeline stages:
+
+* Load raw CSV → Bronze
+* Clean & transform → Silver
+* Build Fact & Dimension → Gold
+* Run Data Quality Checks
+Audit logging for pipeline execution
+
+# 🧱 Data Model
+
+Gold Layer includes:
+
+Fact Tables
+* fact_sales
+Dimension Tables
+* dim_customer
+* dim_product
+
+Optimized for analytical queries and reporting.
+
+# 📈 Analytics & Reporting
+
+Analytics built using SQL:
+
+* Customer behavior analysis
+* Product performance metrics
+* Sales trend analysis
+* Revenue insights
+* Top customers & products
+  
+# 🥅 This repositories includes
   * SQL Development
   * Data Architect
   * Data Engineering
@@ -24,12 +66,12 @@ This project involves:
   * Data Analytics
 
 
-🚀 Project Requirements
+# 🚀 Project Requirements
 Building the Data Warehouse 
 Objective
 Develop a modern data warehouse using SQL Server to consolidate sales data, enabling analytical reporting and informed decision-making.
 
-Specifications
+# Specifications
 * Data Sources: Import data from two source systems (ERP and CRM) provided as CSV files.
 * Data Quality: Cleanse and resolve data quality issues prior to analysis.
 * Integration: Combine both sources into a single, user-friendly data model designed for analytical queries.
@@ -37,7 +79,7 @@ Specifications
 * Documentation: Provide clear documentation of the data model to support both business stakeholders and analytics teams.
 
 
- 🖼 BI: Analytics & Reporting 
+ # 🖼 BI: Analytics & Reporting 
 Objective
 Develop SQL-based analytics to deliver detailed insights into:
 
